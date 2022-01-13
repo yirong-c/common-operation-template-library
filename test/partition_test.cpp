@@ -14,7 +14,7 @@ TEST_CASE("Partition 1")
     std::vector<int> arr = { 2, 8, 7, 1, 3, 5, 6, 4 };
     clock_t start = clock();
     std::pair<std::vector<int>::iterator, std::vector<int>::iterator> interval = 
-        col::Partition(arr.begin(), arr.end(), [](int a) { return a - 4; });
+        cotl::Partition(arr.begin(), arr.end(), [](int a) { return a - 4; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -35,7 +35,7 @@ TEST_CASE("Partition 2")
     std::vector<int> arr = { 2, 8, 7, 1, 3, 5, 6, 4 };
     clock_t start = clock();
     std::pair<std::vector<int>::iterator, std::vector<int>::iterator> interval = 
-        col::Partition(arr.begin() + 2, arr.begin() + 6, [](int a) { return a - 4; });
+        cotl::Partition(arr.begin() + 2, arr.begin() + 6, [](int a) { return a - 4; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -56,7 +56,7 @@ TEST_CASE("Partition 3")
     std::vector<int> arr = { 2, 8, 5, 1, 3, 5, 6, 4 };
     clock_t start = clock();
     std::pair<std::vector<int>::iterator, std::vector<int>::iterator> interval = 
-        col::Partition(arr.begin() + 1, arr.begin() + 7, [](int a) { return a - 5; });
+        cotl::Partition(arr.begin() + 1, arr.begin() + 7, [](int a) { return a - 5; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";

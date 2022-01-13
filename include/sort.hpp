@@ -3,7 +3,7 @@
 
 #include <iterator>
 
-namespace col
+namespace cotl
 {
     /**
      * Insertion sort.

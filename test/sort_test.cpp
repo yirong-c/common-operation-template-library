@@ -14,7 +14,7 @@ TEST_CASE("InsertionSort 1 cmp")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin(), arr.end(), [](int a, int b) { return a > b; });
+    cotl::InsertionSort(arr.begin(), arr.end(), [](int a, int b) { return a > b; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -31,7 +31,7 @@ TEST_CASE("InsertionSort 2 cmp")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin() + 1, arr.begin() + 5, [](int a, int b) { return a > b; });
+    cotl::InsertionSort(arr.begin() + 1, arr.begin() + 5, [](int a, int b) { return a > b; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -48,7 +48,7 @@ TEST_CASE("InsertionSort 3 cmp")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin() + 4, arr.end(), [](int a, int b) { return a > b; });
+    cotl::InsertionSort(arr.begin() + 4, arr.end(), [](int a, int b) { return a > b; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -65,7 +65,7 @@ TEST_CASE("InsertionSort 4 cmp")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin() + 5, arr.end(), [](int a, int b) { return a > b; });
+    cotl::InsertionSort(arr.begin() + 5, arr.end(), [](int a, int b) { return a > b; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -82,7 +82,7 @@ TEST_CASE("InsertionSort 5 cmp")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin() + 5, arr.end(), [](int a, int b) { return a > b; });
+    cotl::InsertionSort(arr.begin() + 5, arr.end(), [](int a, int b) { return a > b; });
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -99,7 +99,7 @@ TEST_CASE("InsertionSort 1 std::less")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin(), arr.end());
+    cotl::InsertionSort(arr.begin(), arr.end());
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";
@@ -116,7 +116,7 @@ TEST_CASE("InsertionSort 2 std::less")
     std::cout << "-------------------\n";
     std::vector<int> arr = { 5, 2, 4, 6, 1, 3 };
     clock_t start = clock();
-    col::InsertionSort(arr.begin() + 1, arr.begin() + 5);
+    cotl::InsertionSort(arr.begin() + 1, arr.begin() + 5);
     clock_t end = clock();
     std::cout << "running time: " << 
         (double)(end - start) << " clocks\n";

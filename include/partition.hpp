@@ -3,7 +3,7 @@
 
 #include "sort.hpp"
 
-namespace col
+namespace cotl
 {
     /**
      * Partition the array arround pivot 
