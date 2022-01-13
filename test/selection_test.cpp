@@ -92,7 +92,7 @@ TEST_CASE("Select 4")
     REQUIRE(interval == interval_solution);
 }
 
-TEST_CASE("WeighedSelect 1")
+TEST_CASE("WeightedSelect 1")
 {
     using Container = std::vector< std::pair<int, size_t> >;
     int i, j, h;
@@ -102,7 +102,7 @@ TEST_CASE("WeighedSelect 1")
     };
     clock_t start = clock();
     std::pair<Container::iterator, Container::iterator> interval = 
-        cotl::WeighedSelect(arr.begin(), arr.end(), 49, 
+        cotl::WeightedSelect(arr.begin(), arr.end(), 49, 
         [](const std::pair<int, size_t>& a) { return a.second; }, 
         [](const std::pair<int, size_t>& a, const std::pair<int, size_t>& b) 
         { return a.first - b.first; });

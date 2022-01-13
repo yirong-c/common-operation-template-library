@@ -79,7 +79,7 @@ namespace cotl
      */
     template <typename RandomAccessIterator, typename Compare, typename Weight>    
     std::pair<RandomAccessIterator, RandomAccessIterator> 
-        WeighedSelect(RandomAccessIterator first, RandomAccessIterator last, 
+        WeightedSelect(RandomAccessIterator first, RandomAccessIterator last, 
         size_t weighted_rank, Weight weight, Compare compare)
     {
         if (std::distance(first, last) <= 1)
@@ -116,13 +116,13 @@ namespace cotl
             weight_sum += weight(*it);
         }
         if (weighted_rank < weight_sum)
-            return WeighedSelect(first, pivot_interval.first, weighted_rank, weight, compare);
+            return WeightedSelect(first, pivot_interval.first, weighted_rank, weight, compare);
         for (RandomAccessIterator it = pivot_interval.first; it != pivot_interval.second; ++it)
         {
             weight_sum += weight(*it);
         }
         if (weighted_rank >= weight_sum)
-            return WeighedSelect(pivot_interval.second, last, 
+            return WeightedSelect(pivot_interval.second, last, 
                 weighted_rank - weight_sum, weight, compare);
         return pivot_interval;
     }

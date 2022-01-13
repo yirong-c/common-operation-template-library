@@ -12,7 +12,7 @@ in a style similar to STL.
 
 ### [Selection](https://github.com/frc123/common-operation-template-library/blob/dev/include/selection.hpp)
 
-- determine the *i*th smallest element (unweighed or weighed) in worst-case linear time
+- determine the *i*th smallest element (unweighted or weighted) in worst-case linear time
 
 ## Contribute
 
