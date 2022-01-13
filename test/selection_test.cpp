@@ -91,3 +91,32 @@ TEST_CASE("Select 4")
     REQUIRE(arr == solution);
     REQUIRE(interval == interval_solution);
 }
+
+TEST_CASE("WeighedSelect 1")
+{
+    using Container = std::vector< std::pair<int, size_t> >;
+    int i, j, h;
+    std::cout << "-------------------\n";
+    Container arr = { 
+        { 4, 10 }, { 3, 3 }, { 7, 20 }, { 5, 15 }, { 2, 35 }, { 3, 5 }, { 6, 2 }, { 1, 10 }
+    };
+    clock_t start = clock();
+    std::pair<Container::iterator, Container::iterator> interval = 
+        cotl::WeighedSelect(arr.begin(), arr.end(), 49, 
+        [](const std::pair<int, size_t>& a) { return a.second; }, 
+        [](const std::pair<int, size_t>& a, const std::pair<int, size_t>& b) 
+        { return a.first - b.first; });
+    clock_t end = clock();
+    std::cout << "running time: " << 
+        (double)(end - start) << " clocks\n";
+    std::cout << "running time: " << 
+        (double)(end - start) / CLOCKS_PER_SEC << " seconds\n";
+    std::cout << "\n";
+    Container solution = { 
+        { 2, 35 }, { 1, 10 }, { 3, 3 }, { 3, 5 }, { 7, 20 }, { 4, 10 }, { 5, 15 }, { 6, 2 } 
+    };
+    std::pair<Container::iterator, Container::iterator> interval_solution = 
+        { arr.begin() + 2, arr.begin() + 4 };
+    REQUIRE(arr == solution);
+    REQUIRE(interval == interval_solution);
+}
