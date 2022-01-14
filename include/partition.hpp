@@ -13,7 +13,7 @@ namespace cotl
      * @param compare comparsion function object which 
      *                  returns 0 if the argument is equal to the pivot value and 
      *                  returns negative value if the argument is less than the pivot value.
-     *          signature: int Cmp(const Type &a); 
+     *          signature: Cmp(const Type &a); (return value can be double)
      * @return range of elements that are eqaul to the pivot value
      */
     template <typename BidirectionalIterator, typename Compare>    

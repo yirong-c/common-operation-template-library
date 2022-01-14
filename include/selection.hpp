@@ -10,15 +10,16 @@ namespace cotl
 {
     /**
      * Select the rank-th small element from the range of the container. 
-     * This function will cause a partition on the range of the container 
+     * This function will perform a partition on the range of the container 
      * around the rank-th small element.
      * @param first range
      * @param last range
      * @param rank order statistic (start by 0)
+     *                      (must in the range of [0, std::distance(first, last)); otherwise, UB)
      * @param compare comparsion function object which 
      *                  returns 0 if the first argument is equal to the second argument and 
      *                  returns negative value if the first argument is less than the second argument.
-     *          signature: int Cmp(const Type &a, const Type &b); 
+     *          signature: Cmp(const Type &a, const Type &b); 
      * @return range of elements that are eqaul to the rank-th small element
      */
     template <typename RandomAccessIterator, typename Compare>    
@@ -64,17 +65,18 @@ namespace cotl
 
     /**
      * Select the rank-th small element from the range of the container. 
-     * This function will cause a partition on the range of the container 
+     * This function will perform a partition on the range of the container 
      * around the rank-th small element.
      * @param first range
      * @param last range
-     * @param weighted_rank weighted order statistic (start by 0)
+     * @param weighted_rank weighted order statistic (start by 0) 
+     *                      (must in the range of [0, sum of weight); otherwise, UB)
      * @param weight weight function object which returns the weight of the argument.
      *          signature: size_t Weight(const Type &a); 
      * @param compare comparsion function object which 
      *                  returns 0 if the first argument is equal to the second argument and 
      *                  returns negative value if the first argument is less than the second argument.
-     *          signature: int Cmp(const Type &a, const Type &b); 
+     *          signature: Cmp(const Type &a, const Type &b); 
      * @return range of elements that are eqaul to the rank-th small element
      */
     template <typename RandomAccessIterator, typename Compare, typename Weight>    

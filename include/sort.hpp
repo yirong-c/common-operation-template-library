@@ -11,7 +11,7 @@ namespace cotl
      * @param last range
      * @param compare comparsion function object which 
      *                  returns true if the first argument is less than the second argument.
-     *          signature: bool Cmp(const Type &a, const Type &b); 
+     *          signature: Cmp(const Type &a, const Type &b); 
      */
     template <typename BidirectionalIterator, typename Compare>    
     void InsertionSort(BidirectionalIterator first, BidirectionalIterator last, Compare compare)
