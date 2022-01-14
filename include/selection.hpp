@@ -37,12 +37,22 @@ namespace cotl
         {
             group_first = group_last;
             group_last = group_first + 5;
-            cotl::InsertionSort(group_first, group_last);
+            cotl::InsertionSort(group_first, group_last, 
+                [&compare]
+                (const typename std::iterator_traits<RandomAccessIterator>::value_type &a,
+                const typename std::iterator_traits<RandomAccessIterator>::value_type &b) {
+                    return compare(a, b) < 0;
+                });
             medians.push_back(*(group_first + 2));
         }
         if (group_last != last)
         {
-            cotl::InsertionSort(group_last, last);
+            cotl::InsertionSort(group_last, last,
+                [&compare]
+                (const typename std::iterator_traits<RandomAccessIterator>::value_type &a,
+                const typename std::iterator_traits<RandomAccessIterator>::value_type &b) {
+                    return compare(a, b) < 0;
+                });
             medians.push_back(*(group_last + ((std::distance(group_last, last) - 1) >> 1)));
         }
         typename std::iterator_traits<RandomAccessIterator>::value_type &median_of_medians = 
@@ -95,12 +105,22 @@ namespace cotl
         {
             group_first = group_last;
             group_last = group_first + 5;
-            cotl::InsertionSort(group_first, group_last);
+            cotl::InsertionSort(group_first, group_last, 
+                [&compare]
+                (const typename std::iterator_traits<RandomAccessIterator>::value_type &a,
+                const typename std::iterator_traits<RandomAccessIterator>::value_type &b) {
+                    return compare(a, b) < 0;
+                });
             medians.push_back(*(group_first + 2));
         }
         if (group_last != last)
         {
-            cotl::InsertionSort(group_last, last);
+            cotl::InsertionSort(group_last, last,
+                [&compare]
+                (const typename std::iterator_traits<RandomAccessIterator>::value_type &a,
+                const typename std::iterator_traits<RandomAccessIterator>::value_type &b) {
+                    return compare(a, b) < 0;
+                });
             medians.push_back(*(group_last + ((std::distance(group_last, last) - 1) >> 1)));
         }
         typename std::iterator_traits<RandomAccessIterator>::value_type &median_of_medians = 
